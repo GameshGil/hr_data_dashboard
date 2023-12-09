@@ -1,6 +1,7 @@
 import datetime as dt
 
 from flask_login import UserMixin
+
 from config import db
 
 

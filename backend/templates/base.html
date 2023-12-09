@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    {% block content %}{% endblock %}
+    <header>
+        <a href="{{ url_for('index') }}">На Главную</a>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        Техническая информация
+    </footer>
 </body>
 </html>
