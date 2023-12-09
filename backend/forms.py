@@ -21,4 +21,4 @@ class LoginForm(FlaskForm):
     username = StringField('ФИО пользователя', validators=[DataRequired()])
     password = PasswordField('Пароль', validators=[DataRequired()])
     remember_me = BooleanField('Запомнить меня')
-    submit = SubmitField('Авторизироваться')
+    submit = SubmitField('Войти')
