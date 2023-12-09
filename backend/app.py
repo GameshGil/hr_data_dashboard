@@ -1,6 +1,6 @@
 from flask import render_template, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user
+# from flask_login import login_user
 
 from config import app, db
 from models import User
@@ -33,10 +33,7 @@ def register():
                 form=form,
                 message='Пользователь уже зарегистрирован'
             )
-        hashed_password = generate_password_hash(
-            password=password,
-            method='sha256'
-        )
+        hashed_password = generate_password_hash(password)
         new_user = User(
             username=username,
             email=email,
@@ -54,12 +51,12 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        username = form.username.data
+        email = form.email.data
         password = form.password.data
-        user = User.query.filter_by(username=username).first_or_404()
+        user = User.query.filter_by(email=email).first_or_404()
 
         if user and check_password_hash(user.hashed_password, password):
-            login_user(user)
+            # login_user(user)
             return redirect(url_for('index'))
 
     return render_template('login.html', form=form)

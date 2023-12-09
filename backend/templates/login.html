@@ -7,10 +7,10 @@
 <form action="/login" method="post" class="authorize_form">
     {{ form.hidden_tag() }}
     <div>
-        {{ form.username.label }}<br>
-        {{ form.username(class="form__username") }}<br>
-        {% for error in form.username.errors %}
-        <div class="form__username_error" role="alert">
+        {{ form.email.label }}<br>
+        {{ form.email(class="form__email") }}<br>
+        {% for error in form.email.errors %}
+        <div class="form__error" role="alert">
             {{ error }}
         </div>
         {% endfor %}
@@ -19,7 +19,7 @@
         {{ form.password.label }}<br>
         {{ form.password(type="password", class="form__password") }}<br>
         {% for error in form.password.errors %}
-        <div class="form__password_error" role="alert">
+        <div class="form__error" role="alert">
             {{ error }}
         </div>
         {% endfor %}
