@@ -3,29 +3,29 @@
 {% block title %}Авторизация{% endblock %}
 
 {% block content %}
-<h1>Авторизация</h1>
-<form action="/login" method="post" class="authorize_form">
-    {{ form.hidden_tag() }}
-    <div>
-        {{ form.email.label }}<br>
-        {{ form.email(class="form__email") }}<br>
-        {% for error in form.email.errors %}
-        <div class="form__error" role="alert">
-            {{ error }}
+    <h1>Авторизация</h1>
+    <form action="/login" method="post" class="authorize_form">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.email.label }}<br>
+            {{ form.email(class="form__email") }}<br>
+            {% for error in form.email.errors %}
+            <div class="form__error" role="alert">
+                {{ error }}
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
-    <div>
-        {{ form.password.label }}<br>
-        {{ form.password(type="password", class="form__password") }}<br>
-        {% for error in form.password.errors %}
-        <div class="form__error" role="alert">
-            {{ error }}
+        <div>
+            {{ form.password.label }}<br>
+            {{ form.password(type="password", class="form__password") }}<br>
+            {% for error in form.password.errors %}
+            <div class="form__error" role="alert">
+                {{ error }}
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
-    <div>{{ form.remember_me() }} {{ form.remember_me.label }}</div>
-    <div>{{ form.submit(type="submit", class="submit_btn") }}</div>
-</form>
-<a href="{{ url_for('register') }}">Регистрация</a>
+        <div>{{ form.remember_me() }} {{ form.remember_me.label }}</div>
+        <div>{{ form.submit(type="submit", class="submit_btn") }}</div>
+    </form>
+    <a href="{{ url_for('register') }}">Регистрация</a>
 {% endblock %}
