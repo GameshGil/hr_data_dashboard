@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Загрузка данных{% endblock %}
+
+{% block content %}
+    <h1>Загрузка данных</h1>
+    <form action="/load_data" method="post" class="load_data_form" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.load_data.label }}<br>
+            {{ form.load_data(class="form__load_data", style="color: transparent;") }}<br>
+            {% for error in form.load_data.errors %}
+            <div class="form__error" role="alert">
+                {{ error }}
+            </div>
+            {% endfor %}
+        </div>
+        <div>{{ form.submit(type="submit", class="submit_btn") }}</div>
+    </form>
+    {% if is_load %}
+        <div>
+            Данные были успешно загружены.<br>
+            Для обзора созданных дашбордов перейдите по ссылке:<br>
+            <a href="{{ url_for('dashboards1') }}">Дашборды</a>
+        </div>
+    {% endif %}
+{% endblock %}

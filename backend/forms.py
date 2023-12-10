@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, EmailField, PasswordField, BooleanField
-from wtforms import SelectField, SubmitField
+from wtforms import SelectField, SubmitField, FileField
 from wtforms.validators import DataRequired
 
 
@@ -22,3 +22,8 @@ class LoginForm(FlaskForm):
     password = PasswordField('Пароль', validators=[DataRequired()])
     remember_me = BooleanField('Запомнить меня')
     submit = SubmitField('Войти')
+
+
+class DataForm(FlaskForm):
+    load_data = FileField('Обрабатываемые данные', validators=[DataRequired()])
+    submit = SubmitField('Отправить')

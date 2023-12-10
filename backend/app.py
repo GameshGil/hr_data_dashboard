@@ -4,7 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from config import app, db
 from models import User
-from forms import RegistrationForm, LoginForm
+from forms import RegistrationForm, LoginForm, DataForm
 
 
 @app.route("/")
@@ -62,7 +62,25 @@ def login():
     return render_template('login.html', form=form)
 
 
-# 403, 410, 500
+@app.route('/load_data', methods=['GET', 'POST'])
+def loading_data():
+    form = DataForm()
+    is_load_data = False
+    print(is_load_data)
+    if form.validate_on_submit():
+        load_data = form.load_data.data
+        is_load_data = True
+        print(load_data)
+    print(is_load_data)
+    return render_template(
+        'load_data.html', form=form, is_load=is_load_data)
+
+
+@app.route('/dashboards1', methods=['GET', 'POST'])
+def dashboards1():
+    return render_template('dashboards1.html')
+
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
