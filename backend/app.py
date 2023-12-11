@@ -67,7 +67,6 @@ def logout():
     return redirect(url_for('login'))
 
 
-
 @app.route('/load_data', methods=['GET', 'POST'])
 def loading_data():
     form = DataForm()
