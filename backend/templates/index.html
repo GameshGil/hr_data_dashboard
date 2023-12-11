@@ -3,7 +3,6 @@
 {% block title %}Главная{% endblock %}
 
 {% block content %}
-    <h1>Главная страница</h1>
-    <a href="{{ url_for('login') }}">Авторизация</a>
-    <a href="{{ url_for('loading_data') }}">Загрузка данных</a>
+    <h2 class="index_title">Прогнозируем будущее вашей компании</h2>
+    <a href="{{ url_for('loading_data') }}" class="index_load_data_ref">Загрузка данных</a>
 {% endblock %}

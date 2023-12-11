@@ -3,29 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon-16x16.png') }}">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='img/favicon/site.webmanifest') }}">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="{{ url_for('index') }}">
-                <img class="main_logo_img" src="{{ url_for('static', filename='img/logo.png') }}" alt="Логотип">
+    <header class="header">
+        <div class="container header_cont">
+            <a href="{{ url_for('index') }}" class="logo_ref" >
+                <img class="logo_img" src="{{ url_for('static', filename='img/logo.png') }}" alt="Логотип">
+                <h1 class="logo_title">
+                    HR Dash
+                </h1>
             </a>
+            {% if True %}
+                <a href="{{ url_for('logout') }}" class="login_btn login_user"><span class="login_text">Logout</span></a>
+            {% else %}
+                <a href="{{ url_for('login') }}" class="login_btn logout_user"><span class="login_text">Login</span></a>
+            {% endif %}
         </div>
     </header>
-    <main>
+    <main class="main">
         <div class="container">
             {% block content %}{% endblock %}
         </div>
     </main>
-    <footer>
+    <footer class="footer">
         <div class="container">
-            Техническая информация
+            <div class="connect">
+                <div class="connect_text">
+                    Заинтересованы в сотрудничестве? Оставьте свою почту, и мы свяжемся с вами.
+                </div>
+                <input type="text" class="connect_field" placeholder="your-email@gmail.com">
+                <button class="connect_button">Оставить</button>
+            </div>
+            <ul class="socials_list">
+                <li><a href="#" title="telegram"><img src="{{ url_for('static', filename='img/socials/telegram-48.png') }}" alt="telegram"></a></li>
+                <li><a href="#" title="vk-com"><img src="{{ url_for('static', filename='img/socials/vk-com-48.png') }}" alt="vk-com"></a></li>
+                <li><a href="#" title="facebook"><img src="{{ url_for('static', filename='img/socials/facebook-48.png') }}" alt="facebook"></a></li>
+                <li><a href="#" title="youtube"><img src="{{ url_for('static', filename='img/socials/youtube-48.png') }}" alt="youtube"></a></li>
+            </ul>
         </div>
     </footer>
 </body>

@@ -1,3 +1,9 @@
+/*------------------- Font import -------------------*/
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption&family=Roboto+Slab&family=Russo+One&display=swap');
+/*----------------- Font import end -----------------*/
+
+
+/*------------------- CSS Reset -------------------*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -359,11 +365,13 @@ textarea {
     color: #000;
     padding: 0.2em 0;
 }
+/*------------------- CSS Reset end -------------------*/
 
-/*------------------- Custom styles -------------------*/
 
+/*------------------- Styles -------------------*/
 body {
-
+    min-height: 100vh;
+    background: url(../img/bg_main.jpg) no-repeat center bottom / cover;
 }
 
 .container {
@@ -371,21 +379,117 @@ body {
     margin: 0 auto;
 }
 
-header {
-    height: 100px;
-    background-color: #b3d4fc;
+.header {
+    position: relative;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.4);
 }
-.main_logo_img {
+.header_cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+}
+.logo_ref {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+}
+.logo_img {
+    display: block;
     width: 50px;
     height: 50px;
 }
+.logo_title {
+    padding: 0 20px;
+    color: #ece5d4;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-family: 'Russo One', sans-serif;
+}
+.login_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    background-color: #fff;
+    text-decoration: none;
+}
+.login_text {
+    color: #000;
+    font-family: 'Roboto Slab', serif;
 
-main {
-    min-height: 500px;
-    background-color: bisque;
 }
 
-footer {
-    height: 100px;
-    background-color: cadetblue;
+.main {
+    min-height: calc(100vh - 220px);
 }
+
+.footer {
+    height: 150px;
+    text-align: center;
+    background-color: #fff;
+    font-family: 'Roboto Slab', serif;
+}
+.connect {
+    padding: 6px;
+}
+.connect_text {
+    padding: 12px;
+}
+.connect_field {
+    width: 250px;
+    padding: 4px;
+    font-family: 'Roboto Slab', serif;
+}
+.connect_button {
+    padding: 6px;
+    border: none;
+    font-family: 'Roboto Slab', serif;
+    color: #fff;
+    background-color: #000;
+}
+.connect_button:hover {
+    transform: scale(1.05);
+}
+.socials_list {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 400px;
+    margin: 0 auto;
+    padding: 5px 0;
+}
+.socials_list li {
+    padding: 3px 8px;
+}
+
+/*------------------- Main page -------------------*/
+.index_title {
+    padding-top: 200px;
+    font-size: 85px;
+    font-family: 'PT Sans Caption', sans-serif;
+    font-weight: bold;
+    color: #fff;
+}
+.index_load_data_ref {
+    display: inline-block;
+    box-sizing: border-box;
+    margin-top: 30px;
+    padding: 15px 82px;
+    border: 2px solid #fff;
+    font-size: 26px;
+    font-family: 'Russo One', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+.index_load_data_ref:hover {
+    background-color: #fff;
+    color: #000;
+}
+/*------------------- Main page end -------------------*/
+
+/*------------------- Styles end -------------------*/

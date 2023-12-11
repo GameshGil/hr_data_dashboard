@@ -62,6 +62,12 @@ def login():
     return render_template('login.html', form=form)
 
 
+@app.route('/logout', methods=['GET'])
+def logout():
+    return redirect(url_for('login'))
+
+
+
 @app.route('/load_data', methods=['GET', 'POST'])
 def loading_data():
     form = DataForm()
