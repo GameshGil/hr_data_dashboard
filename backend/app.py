@@ -1,10 +1,15 @@
 from flask import render_template, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
-# from flask_login import login_user
+from flask_login import login_user, logout_user, login_required
 
-from config import app, db
+from config import app, db, login_manager
 from models import User
 from forms import RegistrationForm, LoginForm, DataForm
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get_or_404(user_id)
 
 
 @app.route("/")
@@ -53,35 +58,39 @@ def login():
     if form.validate_on_submit():
         email = form.email.data
         password = form.password.data
+        remember = form.remember_me.data
         user = User.query.filter_by(email=email).first_or_404()
 
         if user and check_password_hash(user.hashed_password, password):
-            # login_user(user)
+            login_user(user, remember=remember)
             return redirect(url_for('index'))
+        return render_template('login.html', form=form)
 
     return render_template('login.html', form=form)
 
 
 @app.route('/logout', methods=['GET'])
+@login_required
 def logout():
+    logout_user()
     return redirect(url_for('login'))
 
 
 @app.route('/load_data', methods=['GET', 'POST'])
+@login_required
 def loading_data():
     form = DataForm()
     is_load_data = False
-    print(is_load_data)
     if form.validate_on_submit():
         load_data = form.load_data.data
         is_load_data = True
         print(load_data)
-    print(is_load_data)
     return render_template(
         'load_data.html', form=form, is_load=is_load_data)
 
 
 @app.route('/dashboards1', methods=['GET', 'POST'])
+@login_required
 def dashboards1():
     return render_template('dashboards1.html')
 
@@ -89,6 +98,11 @@ def dashboards1():
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
+
+
+@app.errorhandler(401)
+def not_authorized(error):
+    return redirect(url_for('login'))
 
 
 if __name__ == '__main__':

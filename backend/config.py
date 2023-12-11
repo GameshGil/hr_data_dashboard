@@ -3,6 +3,7 @@ import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_login import LoginManager
 from flask_wtf import CSRFProtect
 from dotenv import load_dotenv
 
@@ -17,3 +18,6 @@ migrate = Migrate(app=app, db=db)
 
 app.config['SECRET_KEY'] = SECRET_KEY
 csrf = CSRFProtect(app)
+
+login_manager = LoginManager()
+login_manager.init_app(app)

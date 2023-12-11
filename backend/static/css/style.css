@@ -334,8 +334,16 @@ body {
 /*------------------- Main page -------------------*/
 
 .index_title {
-    padding-top: 200px;
+    padding-top: 220px;
     font-size: 85px;
+    font-family: 'PT Sans Caption', sans-serif;
+    font-weight: bold;
+    color: #fff;
+}
+.index_descr {
+    margin-top: 35px;
+    font-size: 32px;
+    line-height: 1.3em;
     font-family: 'PT Sans Caption', sans-serif;
     font-weight: bold;
     color: #fff;
@@ -343,7 +351,7 @@ body {
 .index_load_data_ref {
     display: inline-block;
     box-sizing: border-box;
-    margin-top: 30px;
+    margin-top: 70px;
     padding: 15px 82px;
     border: 2px solid #fff;
     font-size: 26px;

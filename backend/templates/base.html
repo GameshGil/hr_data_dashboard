@@ -19,7 +19,7 @@
                     HR Dash
                 </h1>
             </a>
-            {% if True %}
+            {% if current_user.is_authenticated %}
                 <a href="{{ url_for('logout') }}" class="login_btn login_user"><span class="login_text">Logout</span></a>
             {% else %}
                 <a href="{{ url_for('login') }}" class="login_btn logout_user"><span class="login_text">Login</span></a>
