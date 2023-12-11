@@ -1,8 +1,10 @@
-from flask import render_template, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
+from werkzeug.serving import run_simple
+from flask import render_template, redirect, url_for
 from flask_login import login_user, logout_user, login_required
 
-from config import app, db, login_manager
+from config import app, db, login_manager, dash_app
 from models import User
 from forms import RegistrationForm, LoginForm, DataForm
 
@@ -89,10 +91,10 @@ def loading_data():
         'load_data.html', form=form, is_load=is_load_data)
 
 
-@app.route('/dashboards1', methods=['GET', 'POST'])
-@login_required
-def dashboards1():
-    return render_template('dashboards1.html')
+# @app.route('/dashboards1', methods=['GET', 'POST'])
+# @login_required
+# def dashboards1():
+#     return render_template('dashboards1.html')
 
 
 @app.errorhandler(404)
@@ -105,7 +107,11 @@ def not_authorized(error):
     return redirect(url_for('login'))
 
 
+application = DispatcherMiddleware(
+    app,
+    {"/dashboards1": dash_app.server},
+)
+
+
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-    app.run(host='127.0.0.1', port=8080, debug=True)
+    run_simple(hostname='127.0.0.1', port=8080, application=application)

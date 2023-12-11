@@ -7,6 +7,8 @@ from flask_login import LoginManager
 from flask_wtf import CSRFProtect
 from dotenv import load_dotenv
 
+from dashboards import init_dashboard
+
 load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
@@ -21,3 +23,5 @@ csrf = CSRFProtect(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
+
+dash_app = init_dashboard()
