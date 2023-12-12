@@ -91,6 +91,13 @@ def loading_data():
         'load_data.html', form=form, is_load=is_load_data)
 
 
+@app.route('/load_data_from_file', methods=['POST'])
+@login_required
+def load_data_from_file():
+    print('вызов метода чтения файла')
+    return redirect('/dashboards1')
+
+
 # @app.route('/dashboards1', methods=['GET', 'POST'])
 # @login_required
 # def dashboards1():

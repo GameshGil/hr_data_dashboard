@@ -9,12 +9,16 @@ class RegistrationForm(FlaskForm):
     email = EmailField('Email пользователя', validators=[DataRequired()])
     role = SelectField(
         'Роль',
-        choices=[('user', 'Пользователь'), ('admin', 'Администратор')],
+        choices=[
+            ('user', 'Пользователь'),
+            ('manager', 'Менеджер'),
+            ('admin', 'Администратор')
+        ],
         validators=[DataRequired()])
     password = PasswordField('Пароль', validators=[DataRequired()])
     password_repeat = PasswordField(
         'Введите пароль повторно', validators=[DataRequired()])
-    submit = SubmitField('Зарегистрироваться')
+    submit = SubmitField('Подтвердить')
 
 
 class LoginForm(FlaskForm):
@@ -25,5 +29,6 @@ class LoginForm(FlaskForm):
 
 
 class DataForm(FlaskForm):
-    load_data = FileField('Обрабатываемые данные', validators=[DataRequired()])
+    load_data = FileField(
+        'Выбрать обрабатываемые данные', validators=[DataRequired()])
     submit = SubmitField('Отправить')

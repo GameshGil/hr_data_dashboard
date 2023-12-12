@@ -265,7 +265,7 @@ body {
 }
 .logo_title {
     padding: 0 20px;
-    color: #ece5d4;
+    color: #fff;
     font-size: 32px;
     text-transform: uppercase;
     font-family: 'Russo One', sans-serif;
@@ -280,8 +280,8 @@ body {
 }
 .login_text {
     color: #000;
-    font-family: 'Roboto Slab', serif;
-
+    font-family: 'Russo One', sans-serif;
+    text-transform: uppercase;
 }
 
 .main {
@@ -331,10 +331,9 @@ body {
 /*------------------- Main page -------------------*/
 
 .index_title {
-    padding-top: 220px;
+    padding-top: 200px;
     font-size: 85px;
-    font-family: 'PT Sans Caption', sans-serif;
-    font-weight: bold;
+    font-family: 'Russo One', sans-serif;
     color: #fff;
 }
 .index_descr {
@@ -362,5 +361,156 @@ body {
 }
 
 /*------------------- Main page end -------------------*/
+
+
+/*------------------- Registration page -------------------*/
+.form_title {
+    box-sizing: border-box;
+    padding-top: 35px;
+    font-size: 40px;
+    font-family: 'Russo One', sans-serif;
+    color: #fff;
+}
+.user_form {
+    box-sizing: border-box;
+    width: 450px;
+    margin: 30px auto;
+    padding: 20px 20px 30px 20px;
+    background-color: #fff;
+}
+.field_cont {
+    padding: 10px;
+}
+.user_form label {
+    display: block;
+    padding: 0 0 10px 5px;
+    font-size: 15px;
+    font-family: 'PT Sans Caption', sans-serif;
+    color: #7c7070;
+}
+.user_form input, .user_form select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 20px;
+    font-family: 'PT Sans Caption', sans-serif;
+}
+.form__role {
+    padding: 7px;
+    background-color: #fff;
+    outline: none;
+    border: 1px solid #8f8f9d;
+}
+input.submit_btn {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #000;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000;
+    outline: none;
+    cursor: pointer;
+}
+input.submit_btn:hover {
+    color: #000;
+    background-color: #fff;
+    transition: all 0.1s ease;
+}
+/*----------------- Registration page end -----------------*/
+
+
+
+/*------------------ Authorize page -------------------*/
+
+.authorize_info {
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 12px;
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+    color: #1d1d1d;
+}
+.remember_me_cont input {
+    display: inline-block;
+    width: auto;
+}
+.remember_me_cont label {
+    display: inline-block;
+    padding: 10px;
+    user-select: none;
+}
+.ref_btn {
+    display: block;
+    box-sizing: border-box;
+    border-radius: 6px;
+    font-family: 'PT Sans Caption', sans-serif;
+    text-align: center;
+    text-decoration: none;
+}
+.register_ref_btn {
+    width: 450px;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: 60px;
+    padding: 22px;
+    font-size: 18px;
+    color: #000;
+    background-color: #fff;
+}
+.register_ref_btn:hover {
+    color: #fff;
+    background-color: #000;
+    transition: all 0.1s ease;
+}
+
+/*----------------- Authorize page end -----------------*/
+
+
+/*----------------- Load data page -----------------*/
+
+.load_data_form {
+    margin: 160px auto 40px;
+}
+.load_data_cont {
+    margin: 10px 0 8px;
+    padding: 3px 0;
+    border: 1px solid #8f8f9d;
+    border-radius: 6px;
+}
+.load_data_cont input {
+    display: inline;
+    width: 110px;
+    border: none;
+    cursor: pointer;
+}
+.load_data_cont label {
+    display: inline;
+    padding: 8px 6px;
+    cursor: pointer;
+}
+.is_load_info {
+    box-sizing: border-box;
+    margin: 14px 0 0;
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+    color: #1d1d1d;
+}
+.dashboards_ref_btn {
+    width: 100%;
+    margin-top: 30px;
+    padding: 17px;
+    border: 1px solid #000;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000;
+}
+.dashboards_ref_btn:hover {
+    color: #000;
+    background-color: #fff;
+    transition: all 0.1s ease;
+}
+/*----------------- Load data page end -----------------*/
 
 /*------------------- Styles end -------------------*/
