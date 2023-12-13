@@ -1,3 +1,4 @@
+"""Flask app commands."""
 import os
 import pandas as pd
 
@@ -5,6 +6,7 @@ from my_dash import db
 
 
 def load_csv_from_folder():
+    """CSV file loading from folder."""
     basedir = os.path.abspath(os.path.dirname(__file__))
     path_to_csv = os.path.join(basedir, 'human_data/result.csv')
 
@@ -18,5 +20,6 @@ def load_csv_from_folder():
 
 
 def add_csv_to_db(path_to_csv):
+    """Pandas CSV file loading and adding to db."""
     df = pd.read_csv(path_to_csv)
     df.to_sql('human_data', con=db.engine, if_exists='append', index=False)

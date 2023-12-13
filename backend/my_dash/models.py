@@ -1,3 +1,4 @@
+"""Models for main Flask app."""
 import datetime as dt
 
 from flask_login import UserMixin
@@ -6,6 +7,7 @@ from my_dash import db
 
 
 class User(db.Model, UserMixin):
+    """Application user model"""
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(255), nullable=False)

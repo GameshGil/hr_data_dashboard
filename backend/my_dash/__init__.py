@@ -1,3 +1,4 @@
+"""Initialize Flask app."""
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -13,7 +14,8 @@ csrf = CSRFProtect()
 login_manager = LoginManager()
 
 
-def create_app():
+def init_app():
+    """Construct core Flask app."""
     app = Flask(__name__, instance_relative_config=False)
     app.config.from_object('config.Config')
 

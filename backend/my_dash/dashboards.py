@@ -1,3 +1,4 @@
+"""Initializie Dash app."""
 from dash import Dash, html, dcc, Output, Input
 import plotly.express as px
 import pandas as pd

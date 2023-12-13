@@ -1,9 +1,10 @@
+"""Application entry point."""
 from werkzeug.serving import run_simple
 
-from my_dash import create_app
+from my_dash import init_app
 
 
-app = create_app()
+app = init_app()
 
 
 if __name__ == '__main__':

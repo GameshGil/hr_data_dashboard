@@ -1,5 +1,7 @@
+"""Routes for main Flask app."""
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask import render_template, redirect, url_for, current_app
+from flask import render_template, redirect, url_for
+from flask import current_app as app
 from flask_login import login_user, logout_user, login_required, current_user
 
 from my_dash.models import User
@@ -10,18 +12,20 @@ from my_dash.commands import load_csv_from_folder, add_csv_to_db
 from my_dash import db
 
 
-@current_app.login_manager.user_loader
+@app.login_manager.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
 
 
-@current_app.route("/")
+@app.route("/")
 def index():
+    """Index page for Flask app."""
     return render_template('index.html')
 
 
-@current_app.route('/register', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
+    """User registration page."""
     form = RegistrationForm()
     if form.validate_on_submit():
         username = form.username.data
@@ -55,8 +59,9 @@ def register():
     return render_template('register.html', form=form)
 
 
-@current_app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    """User login page."""
     form = LoginForm()
     if form.validate_on_submit():
         email = form.email.data
@@ -72,16 +77,18 @@ def login():
     return render_template('login.html', form=form)
 
 
-@current_app.route('/logout', methods=['GET'])
+@app.route('/logout', methods=['GET'])
 @login_required
 def logout():
+    """User logout page."""
     logout_user()
     return redirect(url_for('login'))
 
 
-@current_app.route('/load_data', methods=['GET', 'POST'])
+@app.route('/load_data', methods=['GET', 'POST'])
 @login_required
 def loading_data():
+    """Loading data for analytics page."""
     form = DataForm()
     is_load_data = False
     wrong_data_type = False
@@ -99,9 +106,10 @@ def loading_data():
             wrong_data_type=wrong_data_type)
 
 
-@current_app.route('/load_data_from_file', methods=['POST'])
+@app.route('/load_data_from_file', methods=['POST'])
 @login_required
 def load_data_from_file():
+    """Route for loading data from file."""
     print(current_user.role)
     if current_user.role == 'user':
         load_csv_from_folder()
@@ -115,21 +123,21 @@ def load_data_from_file():
 #     return render_template('dashboards1.html')
 
 
-@current_app.errorhandler(401)
+@app.errorhandler(401)
 def not_authorized(error):
     return redirect(url_for('login'))
 
 
-@current_app.errorhandler(404)
+@app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
 
 
-@current_app.errorhandler(405)
+@app.errorhandler(405)
 def wrong_method(error):
     return render_template('405.html'), 405
 
 
-@current_app.errorhandler(500)
+@app.errorhandler(500)
 def server_error(error):
     return render_template('500.html'), 500
