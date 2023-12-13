@@ -5,33 +5,36 @@
 {% block content %}
     <h2 class="load_data_title form_title">Загрузка данных</h2>
     {% if current_user.role == 'admin' %}
-    <form action="/load_data" method="post" class="load_data_form user_form" enctype="multipart/form-data">
-        {{ form.hidden_tag() }}
-        {% if not is_load %}
-        <div class="load_data_cont">
-            {{ form.load_data(class="form__load_data", style="color: transparent;") }}
-            {{ form.load_data.label }}
-            {% for error in form.load_data.errors %}
-            <div class="form__error" role="alert">
-                {{ error }}
-            </div>
-            {% endfor %}
-        </div>
-        <div>{{ form.submit(type="submit", class="submit_btn") }}</div>
-        {% else %}
-            <div class="is_load_info ref_btn">
-                Данные были успешно загружены.<br>
-                Для обзора созданных дашбордов перейдите по ссылке
-                <a href="/dashboards1" class="dashboards_ref_btn ref_btn">Дашборды</a>
-            </div>
-        {% endif %}
+        <form action="/load_data" method="post" class="load_data_form user_form" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            {% if not is_load or wrong_data_type %}
+                <div class="load_data_cont">
+                    {{ form.load_data(class="form__load_data", style="color: transparent;") }}
+                    {{ form.load_data.label }}
+                    {% for error in form.load_data.errors %}
+                    <div class="form__error" role="alert">
+                        {{ error }}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div>{{ form.submit(type="submit", class="submit_btn") }}</div>
+                {% if wrong_data_type %}
+                    <div class='wrong_file_type'>Переданный файл имеет формат, отличный от CSV. Загрузите файл CSV формата.</div>
+                {% endif %}
+            {% else %}
+                <div class="is_load_info ref_btn">
+                    Данные были успешно загружены.<br>
+                    Для обзора созданных дашбордов перейдите по ссылке
+                    <a href="/dashboards1" class="dashboards_ref_btn ref_btn">Дашборды</a>
+                </div>                
+            {% endif %}
         </form>
     {% elif current_user.role == 'user' %}
         <form action="/load_data_from_file" method="post" class="load_data_form user_form">
             {{form.hidden_tag() }}
             <div class="is_load_info ref_btn">
                 Данные по работникам хранятся в загруженном на сервер файле.<br>
-                Для генерации результатов по этим данным и обзора дашбордов нажмите кнопку.
+                Для генерации результатов по ним и обзора дашбордов нажмите кнопку
             </div>
             <input type="submit" value="Загрузить данные" class="submit_btn">
         </form>

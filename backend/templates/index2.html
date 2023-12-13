@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-
-{% block title %}Главная{% endblock %}
-
-{% block content %}
-    <h2 class="index_title">Прогнозируем будущее вашей компании</h2>
-    <h3 class="index_descr">Сервис анализа и прогнозирования увольнений сотрудников на основе паттернов работы с электронной почтой</h3>
-    <a href="{{ url_for('loading_data') }}" class="index_load_data_ref">Загрузка данных</a>
-{% endblock %}

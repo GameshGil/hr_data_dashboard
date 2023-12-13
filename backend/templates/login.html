@@ -13,18 +13,18 @@
             {{ form.email.label }}
             {{ form.email(class="form__email") }}
             {% for error in form.email.errors %}
-            <div class="form__error" role="alert">
-                {{ error }}
-            </div>
+                <div class="form__error" role="alert">
+                    {{ error }}
+                </div>
             {% endfor %}
         </div>
         <div class="field_cont">
             {{ form.password.label }}
             {{ form.password(type="password", class="form__password") }}
             {% for error in form.password.errors %}
-            <div class="form__error" role="alert">
-                {{ error }}
-            </div>
+                <div class="form__error" role="alert">
+                    {{ error }}
+                </div>
             {% endfor %}
         </div>
         <div class="field_cont remember_me_cont">{{ form.remember_me() }} {{ form.remember_me.label }}</div>

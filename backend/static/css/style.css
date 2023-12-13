@@ -511,6 +511,33 @@ input.submit_btn:hover {
     background-color: #fff;
     transition: all 0.1s ease;
 }
+.wrong_file_type {
+    box-sizing: border-box;
+    margin: 40px 0 15px;
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+    color: #1d1d1d;
+}
 /*----------------- Load data page end -----------------*/
+
+
+/*----------------- Error page -----------------*/
+
+.error_page__title {
+    box-sizing: border-box;
+    padding-top: 35px;
+    font-size: 40px;
+    font-family: 'Russo One', sans-serif;
+    color: #fff;
+}
+.error_page__desc {
+    box-sizing: border-box;
+    margin-top: 30px;
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+    color: #ffffff;
+}
+
+/*----------------- Error page end -----------------*/
 
 /*------------------- Styles end -------------------*/
