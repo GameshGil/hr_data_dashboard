@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-from config import db
+from my_dash import db
 
 
 def load_csv_from_folder():
@@ -12,6 +12,9 @@ def load_csv_from_folder():
             os.path.isfile(path_to_csv) and
             os.access(path_to_csv, os.R_OK)):
         add_csv_to_db(path_to_csv)
+    else:
+        print('Путь не существует, объект не является файлом'
+              'или к нему нет доступа.')
 
 
 def add_csv_to_db(path_to_csv):

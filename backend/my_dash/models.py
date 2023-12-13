@@ -2,7 +2,7 @@ import datetime as dt
 
 from flask_login import UserMixin
 
-from config import db
+from my_dash import db
 
 
 class User(db.Model, UserMixin):
