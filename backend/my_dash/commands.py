@@ -2,7 +2,7 @@
 import os
 import pandas as pd
 
-from my_dash import db
+from .models import db
 
 
 def load_csv_from_folder():

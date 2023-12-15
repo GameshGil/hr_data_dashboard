@@ -9,7 +9,7 @@ from my_dash.forms import RegistrationForm, LoginForm, DataForm
 from my_dash.commands import load_csv_from_folder, add_csv_to_db
 
 
-from my_dash import db
+from .models import db
 
 
 @app.login_manager.user_loader
