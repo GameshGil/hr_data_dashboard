@@ -6,7 +6,7 @@ load_dotenv()
 
 
 class Config:
-    FLASK_APP = 'wsgi.py'
+    FLASK_APP = 'application.py'
     SECRET_KEY = getenv('SECRET_KEY')
 
     STATIC_FOLDER = 'static'
