@@ -36,14 +36,20 @@ def load_csv_from_folder():
 
 def normalize_table(table):
     """Sorting records and wrapping cell text in table."""
-    content_rows = table[1:]
-    content_rows.sort(key=lambda x: int(x[-1][:-1]), reverse=True)
-    table = [table[0]] + content_rows
-    for row in table[1:]:
+    main_row = [
+        'ID',
+        'ФИО работника',
+        'Падение эффективности\nза последний месяц',
+        'Падение эффективности\nза последние полгода',
+        'Вероятность увольнения\nв ближайшее время'
+    ]
+    table.sort(key=lambda x: int(x[-1][:-1]), reverse=True)
+    result_table = [main_row] + table
+    for row in result_table[1:]:
         for i in range(len(row)):
             if len(row[i]) > 27:
                 row[i] = '\n'.join(row[i].split())
-    return table
+    return result_table
 
 
 def generate_report(departments):
@@ -110,7 +116,7 @@ def generate_report(departments):
         )
         elements.append(report_table)
 
-        link_url = "/dashboards1"
+        link_url = "https://google.com"
         link = Paragraph(
             f'<a href="{link_url}">Дашборды по данным</a>',
             link_style
@@ -138,12 +144,6 @@ def generate_report(departments):
 #         {
 #             'department_title': 'Наименование отдела компании 1',
 #             'department_data': [
-#                 ['ID',
-#                  'ФИО работника',
-#                  'Падение эффективности\nза последний месяц',
-#                  'Падение эффективности\nза последние полгода',
-#                  'Вероятность увольнения\nв ближайшее время'
-#                  ],
 #                 ['1', 'Иванов Иван Иванович', '11%', '63%', '54%'],
 #                 ['2',
 #                  'Александров Александр Александрович',
@@ -157,12 +157,6 @@ def generate_report(departments):
 #         {
 #             'department_title': 'Наименование отдела компании 2',
 #             'department_data': [
-#                 ['ID',
-#                  'ФИО работника',
-#                  'Падение эффективности\nза последний месяц',
-#                  'Падение эффективности\nза последние полгода',
-#                  'Вероятность увольнения\nв ближайшее время'
-#                  ],
 #                 ['1', 'Иванов Иван Иванович', '11%', '63%', '54%'],
 #                 ['2', 'Александров Александр Александрович',
 #                  '23%',
