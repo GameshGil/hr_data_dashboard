@@ -1,5 +1,6 @@
 """Initializie Dash app."""
-from dash import Dash, html, dcc, Output, Input
+from flask import url_for
+from dash import Dash, html, dcc, Output, Input, dash_table
 import plotly.express as px
 import pandas as pd
 
@@ -16,10 +17,54 @@ def init_dashboard():
             ])
 
     dash_app.layout = html.Div([
-        html.H1(children='Title of Dash App', style={'textAlign': 'center'}),
+        html.Header(children=html.Div(
+            children=html.A(
+                children=[
+                    html.Img(
+                        className='logo_img',
+                        # src=f"{url_for('static', filename='img/logo.png')}"
+                        src="my_dash/static/img/logo.png"
+                    ),
+                    html.H1(
+                        children='HR Dash', className='logo_title'
+                    ),
+                ], href="/", className='logo_ref'
+                # ], href=f"{url_for('loading_data')}", className='logo_ref'
+            ), className='container header_cont',
+        ), className='header'),
+        html.Div(
+            children=html.A(
+                children="Разослать отчеты",
+                href="/post_reports",
+                className="send_reports_btn ref_btn"
+            ), className='send_reports_cont'
+        ),
         dcc.Dropdown(df.country.unique(), 'Canada', id='dropdown-selection'),
-        dcc.Graph(id='graph-content')
-    ])
+        # Отрисовка графика, определяемого через ф-ию коллбэка.
+        # Сама функция создана ниже.
+        dcc.Graph(id='graph-content'),
+        # Отрисовка обычной таблицы с данными
+        dash_table.DataTable(data=df.to_dict('records'), page_size=10),
+        # Отрисовка гистограммы
+        dcc.Graph(
+            figure=px.histogram(
+                df,
+                x='continent',
+                y='lifeExp',
+                histfunc='avg'
+            )
+        ),
+        # Отрисовка круговой диаграммы
+        dcc.Graph(
+            figure=px.pie(
+                df,
+                values='pop',
+                names='continent',
+                title='Population of European continent',
+                height=500
+            ),
+        ),
+    ], style={'backgound-color': '#fff'})
 
     init_callbacks(dash_app)
     return dash_app

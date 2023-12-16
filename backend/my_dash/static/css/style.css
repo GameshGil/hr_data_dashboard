@@ -521,6 +521,31 @@ input.submit_btn:hover {
 /*----------------- Load data page end -----------------*/
 
 
+/*----------------- Dashboards page -----------------*/
+
+.send_reports_cont {
+    
+    height: 100px;
+    padding: 30px;
+    background-color: #fff;
+}
+.send_reports_btn {
+    width: 350px;
+    margin: 0 auto;
+    padding: 17px;
+    border: 1px solid #000;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000;
+}
+.send_reports_btn:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+/*----------------- Dashboards page end -----------------*/
+
+
 /*----------------- Error page -----------------*/
 
 .error_page__title {

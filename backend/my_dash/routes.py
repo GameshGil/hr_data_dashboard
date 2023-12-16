@@ -7,6 +7,7 @@ from flask_login import login_user, logout_user, login_required, current_user
 from my_dash.models import User
 from my_dash.forms import RegistrationForm, LoginForm, DataForm
 from my_dash.commands import load_csv_from_folder, add_csv_to_db
+from my_dash.commands import generate_report
 
 
 from .models import db
@@ -110,17 +111,50 @@ def loading_data():
 @login_required
 def load_data_from_file():
     """Route for loading data from file."""
-    print(current_user.role)
     if current_user.role == 'user':
         load_csv_from_folder()
         return redirect('/dashboards1')
     return redirect('/load_data')
 
 
-# @app.route('/dashboards1', methods=['GET', 'POST'])
-# @login_required
-# def dashboards1():
-#     return render_template('dashboards1.html')
+@app.route('/post_reports', methods=['GET'])
+@login_required
+def post_reports():
+    """Route for sending generated reports."""
+    generate_report(
+        [
+            {
+                'department_title': 'Наименование отдела компании 1',
+                'department_data': [
+                    ['1', 'Иванов Иван Иванович', '11%', '63%', '54%'],
+                    ['2',
+                        'Александров Александр Александрович',
+                        '23%',
+                        '47%',
+                        '73%'
+                        ],
+                    ['3', 'Николаев Николай Николаевич', '5%', '27%', '14%'],
+                ]
+            },
+            {
+                'department_title': 'Наименование отдела компании 2',
+                'department_data': [
+                    ['1', 'Иванов Иван Иванович', '11%', '63%', '54%'],
+                    ['2', 'Александров Александр Александрович',
+                        '23%',
+                        '47%',
+                        '73%'
+                        ],
+                    ['3', 'Николаев Николай Николаевич', '5%', '27%', '14%'],
+                ]
+            }
+        ]
+    )
+    # if current_user.role == 'manager':
+    #     send_report()
+    # else:
+    #     send_reports_to_all()
+    return redirect('/dashboards1')
 
 
 @app.errorhandler(401)
