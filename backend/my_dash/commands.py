@@ -11,7 +11,7 @@ from reportlab.platypus import SimpleDocTemplate, Table, Paragraph
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
-from models import db
+from .models import db
 
 
 def add_csv_to_db(path_to_csv):
