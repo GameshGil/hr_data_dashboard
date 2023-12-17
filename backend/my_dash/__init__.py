@@ -12,9 +12,11 @@ csrf = CSRFProtect()
 login_manager = LoginManager()
 
 
-def create_app(config_filename):
+def create_app():
     """Construct core Flask app."""
     app = Flask(__name__, instance_relative_config=False)
+
+    config_filename = 'config.Config'
     app.config.from_object(config_filename)
 
     from my_dash.models import db
@@ -28,9 +30,8 @@ def create_app(config_filename):
         from . import routes
 
         dash_app = init_dashboard()
-        application = DispatcherMiddleware(
-            app,
-            {"/dashboards1": dash_app.server},
+        app.wsgi_app = DispatcherMiddleware(
+            app.wsgi_app,
+            {"/dashboards1": dash_app.server.wsgi_app},
         )
-
-        return application
+        return app

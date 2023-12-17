@@ -1,0 +1,8 @@
+venv
+.env
+.venv
+.git
+__pycache__
+db.sqlite3
+.instanse
+**/*.db

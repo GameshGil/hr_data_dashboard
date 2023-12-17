@@ -13,7 +13,7 @@ def init_dashboard():
         requests_pathname_prefix="/dashboards1/",
         external_stylesheets=[
                 '/static/css/style.css',
-            ])
+        ])
 
     dash_app.layout = html.Div([
         html.Header(children=html.Div(
