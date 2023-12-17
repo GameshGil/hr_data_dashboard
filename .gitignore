@@ -81,3 +81,4 @@ dmypy.json
 
 # Устаревшие файлы
 old/
+temp.py
