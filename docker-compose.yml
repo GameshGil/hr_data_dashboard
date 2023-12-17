@@ -20,9 +20,9 @@ services:
     depends_on:
       - db
     links:
-        - db:flask-db
+      - db:flask-db
 
   gateway:
-      image: saeed12/my-dash-gateway
-      ports:
-        - 8000:80
+    image: saeed12/my-dash-gateway
+    ports:
+      - 8000:80
