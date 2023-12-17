@@ -79,6 +79,6 @@ venv.bak/
 dmypy.json
 
 
-# Устаревшие файлы
 old/
 temp.py
+.pg_data
