@@ -1,0 +1,192 @@
+[33mcommit 52b652b4ebed3afaac7d171792f6a22aa2030668[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sun Dec 17 23:20:38 2023 +0300
+
+    Мелкие правки
+
+[33mcommit 9a15d571d89571583d5411662cddacfa8a3d5d70[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sun Dec 17 21:43:52 2023 +0300
+
+    Доработан readme файл
+
+[33mcommit 366386e7ffb6b3cdcb68c593e0ff6500281624af[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sun Dec 17 21:14:20 2023 +0300
+
+    Правки по docker compose 1.1
+
+[33mcommit 00c45b6572a0c3c00d8e7d3044c9f72fb24fe6d5[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sun Dec 17 21:11:38 2023 +0300
+
+    Правки по docker compose
+
+[33mcommit de8235560bf632c5263593ac04de8ba685589cb1[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sun Dec 17 21:10:36 2023 +0300
+
+    Доработанный docker-compose
+
+[33mcommit 143cb20f364b0a96421b64dcb7751ba7fa421902[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sun Dec 17 16:37:42 2023 +0300
+
+    Исправлены проблемы с миграциями
+
+[33mcommit 9dfa57fee03dc4d6aed6713319527d3051682e58[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sun Dec 17 07:52:26 2023 +0300
+
+    Мелкие правки
+
+[33mcommit bf9de503d701cddaf71c286ae09056e9e134299a[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sun Dec 17 07:51:59 2023 +0300
+
+    Небольшие изменения в структуре проекта
+
+[33mcommit 4803a33a607e4f04723ff8fed38b0cd7fa9183cb[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sat Dec 16 13:22:06 2023 +0300
+
+    Доработана страница дашбордов
+
+[33mcommit 3b987d31725c58bea4abd308c0c804a9c99ea3b8[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sat Dec 16 12:23:12 2023 +0300
+
+    Правки в генерации отчетов
+
+[33mcommit 42241867b442e960e39768bfac0837d56c6a22e7[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sat Dec 16 12:16:15 2023 +0300
+
+    Мелкие правки в проекте
+
+[33mcommit 24bd1a6f411cff40343cb7a2450069752e49f2bd[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sat Dec 16 11:31:52 2023 +0300
+
+    Мелкие правки в коммандах
+
+[33mcommit 64533146d67fc023d54aa0709cf6b63cdca7abc3[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sat Dec 16 11:10:42 2023 +0300
+
+    Добавлена генерация отчетов
+
+[33mcommit eeec373fa6eb0c53c0f459a2dfc1caa2cb6dfea8[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sat Dec 16 00:23:23 2023 +0300
+
+    Небольшие правки в архитектуре
+
+[33mcommit 1305f7082242c15a4e17028fdeae5a31770ae984[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Wed Dec 13 06:56:19 2023 +0300
+
+    Небольшие правки по всему приложению
+
+[33mcommit 29e6824cb21c86c2a1ed4a9ef382f95f621ab573[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Wed Dec 13 06:05:22 2023 +0300
+
+    Полностью переделана структура проекта под фабрику приложений
+
+[33mcommit 12ba2ef9b194cdab010ea8da19e5adba7dd01a69[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Wed Dec 13 03:50:45 2023 +0300
+
+    Добавлена загрузка csv и сохранение в БД
+
+[33mcommit 521f15bab9c989af0bfbe46c833a54be488cdfa9[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Tue Dec 12 04:16:39 2023 +0300
+
+    Доработаны формы загрузки данных
+
+[33mcommit 5ee35a466000d183e14651887ad312d2ed2658cf[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Mon Dec 11 17:13:24 2023 +0300
+
+    Добавлено приложение Dash
+
+[33mcommit 23ac608158da105d8efa90601837782b48cbe151[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Mon Dec 11 05:17:07 2023 +0300
+
+    Реализована система авторизации пользователя
+
+[33mcommit 4af8ebd1fc053f821e7ba4123044f185322c5c9e[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Mon Dec 11 04:30:52 2023 +0300
+
+    Небольшие правки в стилях
+
+[33mcommit 1502585b13a9d568948d8f60dc3b4f94c767b9c8[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Mon Dec 11 04:24:33 2023 +0300
+
+    Доработаны стили нескольких страниц
+
+[33mcommit 45847de96660fb7693751546f013a0bffa6ee0f5[m
+Merge: 032046a 3e98dbe
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sun Dec 10 23:22:04 2023 +0300
+
+    Merge branch 'main' of https://github.com/GameshGil/hr_data_dashboard
+
+[33mcommit 032046a74fc4c57385fd505024ca641c34622e92[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sun Dec 10 23:18:20 2023 +0300
+
+    мелкие правки
+
+[33mcommit 3e98dbe67e0a3cf9c1f70961ecb8d89b09eb624d[m
+Author: TrashBlock <saeed-starik@mail.ru>
+Date:   Sun Dec 10 18:01:17 2023 +0300
+
+    Добавлены страницы и обработчики загрузки данных и дашбордов
+
+[33mcommit 9e6693c54386878dc3c9393cbff312c56b921dc7[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sat Dec 9 05:34:38 2023 +0300
+
+    Добавлена обработка ошибки 404
+
+[33mcommit de7aa28aa611e4c33c885aaed7fa056707786d98[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sat Dec 9 05:31:37 2023 +0300
+
+    Изменен способ авторизации на почту
+
+[33mcommit 3ee827c5f7b8beb8470c4c3c613263cf3057a56a[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sat Dec 9 05:15:00 2023 +0300
+
+    Внесены небольшие правки
+
+[33mcommit 83d999e50d1c86c11e9a5139424dbce12913d938[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sat Dec 9 05:01:48 2023 +0300
+
+    Добавлены шаблоны к регистрации и авторизации
+
+[33mcommit 641982cfeb9f7efb10b247e11a050d621366dd3b[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sat Dec 9 04:41:41 2023 +0300
+
+    Созданы маршруты для регистрации и авторизации
+
+[33mcommit 2f62844e4ccc4518c812f9bc1c677c62cabcc765[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sat Dec 9 03:43:34 2023 +0300
+
+    Добавлены модель пользователя, класс регистрации пользователя
+
+[33mcommit 78f558f5db6a26ed52def4c0ba154e9f7db62ba6[m
+Author: Saeed <saeed-starik@mail.ru>
+Date:   Sat Dec 9 03:23:36 2023 +0300
+
+    База проекта
