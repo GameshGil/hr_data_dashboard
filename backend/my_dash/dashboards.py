@@ -22,14 +22,12 @@ def init_dashboard():
                 children=[
                     html.Img(
                         className='logo_img',
-                        # src=f"{url_for('static', filename='img/logo.png')}"
-                        src="my_dash/static/img/logo.png"
+                        src="/static/img/logo.png"
                     ),
                     html.H1(
                         children='HR Dash', className='logo_title'
                     ),
                 ], href="/", className='logo_ref'
-                # ], href=f"{url_for('loading_data')}", className='logo_ref'
             ), className='container header_cont',
         ), className='header'),
         html.Div(

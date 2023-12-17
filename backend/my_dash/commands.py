@@ -60,7 +60,7 @@ def generate_report(departments):
         pdf_filename, pagesize=A4, title='Отчет', topMargin=20)
     elements = []
 
-    font_path = 'backend/my_dash/static/fonts/NotoSerif-Regular.ttf'
+    font_path = os.path.join(basedir, 'static/fonts/NotoSerif-Regular.ttf')
     pdfmetrics.registerFont(TTFont('CyrillicFont', font_path))
     styles = getSampleStyleSheet()
     styles['Heading1'].fontName = 'CyrillicFont'
@@ -116,7 +116,7 @@ def generate_report(departments):
         )
         elements.append(report_table)
 
-        link_url = "https://google.com"
+        link_url = 'http://127.0.0.1:8080/dashboards1/'
         link = Paragraph(
             f'<a href="{link_url}">Дашборды по данным</a>',
             link_style
