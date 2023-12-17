@@ -1,5 +1,4 @@
 """Initializie Dash app."""
-from flask import url_for
 from dash import Dash, html, dcc, Output, Input, dash_table
 import plotly.express as px
 import pandas as pd
