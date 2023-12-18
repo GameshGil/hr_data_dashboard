@@ -81,4 +81,4 @@ dmypy.json
 
 old/
 temp.py
-.pg_data
+pg_data/
